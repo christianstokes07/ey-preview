@@ -858,18 +858,135 @@
 <div class="page-wrapper">
 
   <div class="lang-bar">
-    <button class="lang-btn active">EN</button>
-    <button class="lang-btn">ES</button>
-    <button class="lang-btn">VI</button>
-    <button class="lang-btn">AR</button>
-    <button class="lang-btn">KO</button>
-    <button class="lang-btn">中文</button>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="alert('Vietnamese translation coming soon in full version.')">VI</button>
+    <button class="lang-btn" onclick="alert('Arabic translation coming soon in full version.')">AR</button>
+    <button class="lang-btn" onclick="alert('Korean translation coming soon in full version.')">KO</button>
+    <button class="lang-btn" onclick="alert('Chinese translation coming soon in full version.')">中文</button>
   </div>
 
-  <span class="screen-label">📱 Applicant Portal — Home Dashboard</span>
+  <div id="home-presubmit">
+    <span class="screen-label">📱 <span data-t="portal_label">Applicant Portal — Welcome</span></span>
+    <div class="hero" style="margin-bottom:24px;">
+      <div class="hero-welcome" data-t="good_morning">Good morning</div>
+      <div class="hero-name" data-t="welcome_name">Welcome, Maria Rodriguez</div>
+      <div class="hero-sub" data-t="hero_sub_pre">You're signed in to SmartApply VA. You have no active applications yet. Start your SNAP application below — it takes about 10–15 minutes.</div>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="showScreen('apply')" data-t="btn_start_app">📋 Start SNAP Application</button>
+        <button class="btn-hero-outline" onclick="document.getElementById('kiosk-info').style.display='block';" data-t="btn_find_kiosk"><span data-t="btn_find_kiosk2">🏛️ Find a Kiosk Near Me</span></button>
+      </div>
+    </div>
+    <div class="grid-3 mb-16">
+      <div class="card" style="text-align:center; padding:24px 20px;">
+        <div style="font-size:32px; margin-bottom:10px;">📋</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:var(--navy); margin-bottom:6px;" data-t="step1_title">Step 1 — Complete Your Application</div>
+        <div style="font-size:13px; color:var(--gray); line-height:1.5;" data-t="step1_body">Fill out household, income, and expense information. AI checks for missing items as you go.</div>
+      </div>
+      <div class="card" style="text-align:center; padding:24px 20px;">
+        <div style="font-size:32px; margin-bottom:10px;">📎</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:var(--navy); margin-bottom:6px;" data-t="step2_title">Step 2 — Upload Documents</div>
+        <div style="font-size:13px; color:var(--gray); line-height:1.5;" data-t="step2_body">Photo-scan your ID, proof of income, and residency. AI pre-verifies uploads instantly.</div>
+      </div>
+      <div class="card" style="text-align:center; padding:24px 20px;">
+        <div style="font-size:32px; margin-bottom:10px;">✅</div>
+        <div style="font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:var(--navy); margin-bottom:6px;" data-t="step3_title">Step 3 — Submit &amp; Track</div>
+        <div style="font-size:13px; color:var(--gray); line-height:1.5;" data-t="step3_body">Submit your application and track its status in real time. Get updates by SMS, email, or push notification.</div>
+      </div>
+    </div>
+    <div class="card mb-16" style="max-width:640px; margin-left:auto; margin-right:auto;">
+      <div class="card-title" style="font-size:16px;" data-t="form_card_title">🚀 Ready to Apply for SNAP Benefits?</div>
+      <div style="font-size:13px; color:var(--gray); margin-bottom:18px; line-height:1.6;" data-t="form_card_desc">SNAP (Supplemental Nutrition Assistance Program) provides monthly food assistance to eligible Virginia households. Let's get started — we'll guide you through every step.</div>
+      <div class="form-row mb-16" style="margin-bottom:14px;">
+        <div class="form-field">
+          <div class="form-label"><span data-t="label_first_name">First Name</span> <span class="req">*</span></div>
+          <input class="form-input" type="text" value="Maria" />
+        </div>
+        <div class="form-field">
+          <div class="form-label"><span data-t="label_last_name">Last Name</span> <span class="req">*</span></div>
+          <input class="form-input" type="text" value="Rodriguez" />
+        </div>
+      </div>
+      <div class="form-row" style="margin-bottom:14px;">
+        <div class="form-field">
+          <div class="form-label"><span data-t="label_dob">Date of Birth</span> <span class="req">*</span></div>
+          <input class="form-input" type="text" value="08/14/1989" />
+        </div>
+        <div class="form-field">
+          <div class="form-label"><span data-t="label_county">Virginia County / City</span> <span class="req">*</span></div>
+          <select class="form-input">
+            <option>Richmond City</option>
+            <option>Fairfax County</option>
+            <option>Virginia Beach</option>
+            <option>Chesterfield County</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field" style="margin-bottom:14px;">
+        <div class="form-label"><span data-t="label_benefit_type">Benefit Type</span> <span class="req">*</span></div>
+        <select class="form-input">
+          <option data-t="benefit_opt1">SNAP (Food Assistance) — New Application</option>
+          <option data-t="benefit_opt2">SNAP — Renewal</option>
+          <option data-t="benefit_opt3">TANF (Temporary Assistance)</option>
+          <option>Medicaid</option>
+        </select>
+      </div>
+      <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:16px; font-size:12px; color:var(--gray);">
+        <input type="checkbox" id="consent" checked style="margin-top:2px; flex-shrink:0;" />
+        <label for="consent" data-t="consent_text">I certify that the information I provide will be true and correct to the best of my knowledge. I understand that providing false information may result in disqualification or legal action under Virginia law.</label>
+      </div>
+      <button class="btn btn-green btn-block" style="font-size:15px; padding:13px; font-family:'Montserrat',sans-serif; font-weight:700;" onclick="submitApplication()" data-t="btn_submit_app">✅ Submit Application &amp; Continue</button>
+      <div style="font-size:11px; color:var(--gray); text-align:center; margin-top:8px;" data-t="form_security_note">🔒 Your information is encrypted and secure. Case number assigned upon submission.</div>
+    </div>
+    <div id="kiosk-info" style="display:none;" class="card mb-16">
+      <div class="card-title" data-t="kiosk_title">🏛️ Find a Shared Service Center Kiosk</div>
+      <div class="grid-4">
+        <div class="kiosk-card"><div class="kiosk-icon">📚</div><div class="kiosk-title" data-t="kiosk_lib_title">Public Libraries</div><div class="kiosk-text" data-t="kiosk_lib_body">47 locations statewide with staff-assisted kiosks.</div></div>
+        <div class="kiosk-card"><div class="kiosk-icon">🏢</div><div class="kiosk-title" data-t="kiosk_dss_title">DSS Offices</div><div class="kiosk-text" data-t="kiosk_dss_body">Full-service support with bilingual staff.</div></div>
+        <div class="kiosk-card"><div class="kiosk-icon">🎓</div><div class="kiosk-title" data-t="kiosk_col_title">Community Colleges</div><div class="kiosk-text" data-t="kiosk_col_body">23 Virginia campuses, open to the public.</div></div>
+        <div class="kiosk-card"><div class="kiosk-icon">🌐</div><div class="kiosk-title" data-t="kiosk_lang_title">Language Access</div><div class="kiosk-text" data-t="kiosk_lang_body">6 languages built-in. 200+ via phone.</div></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Hero -->
-  <div class="hero">
+  <div id="home-confirming" style="display:none; text-align:center; padding:60px 20px;">
+    <div style="font-size:56px; margin-bottom:20px; animation: pulse 1s infinite;">⏳</div>
+    <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:var(--navy); margin-bottom:8px;" data-t="submitting_title">Submitting Your Application…</div>
+    <div style="font-size:14px; color:var(--gray); margin-bottom:28px;" data-t="submitting_sub">AI is checking your application for completeness. This takes just a moment.</div>
+    <div style="max-width:360px; margin:0 auto;">
+      <div style="font-size:12px; color:var(--gray); margin-bottom:6px; text-align:left;" data-t="check_household">Validating household information…</div>
+      <div class="progress-bar mb-16" style="height:10px;"><div class="progress-fill" style="width:100%;"></div></div>
+      <div style="font-size:12px; color:var(--gray); margin-bottom:6px; text-align:left;" data-t="check_income">Checking income details…</div>
+      <div class="progress-bar mb-16" style="height:10px;"><div class="progress-fill" style="width:100%;"></div></div>
+      <div style="font-size:12px; color:var(--gray); margin-bottom:6px; text-align:left;" data-t="check_ai">Running AI completeness check…</div>
+      <div class="progress-bar" style="height:10px;"><div class="progress-fill" id="ai-bar" style="width:0%; transition: width 1.2s ease;"></div></div>
+    </div>
+    <style>@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }</style>
+  </div>
+
+  <div id="home-postsubmit" style="display:none;">
+    <span class="screen-label">📱 <span data-t="portal_label_post">Applicant Portal — Home Dashboard</span></span>
+    <div style="background:linear-gradient(135deg,#166534,#15803d); color:white; border-radius:10px; padding:18px 22px; display:flex; align-items:center; gap:14px; margin-bottom:20px; box-shadow:0 4px 16px rgba(22,101,52,0.25);">
+      <div style="font-size:32px; flex-shrink:0;">🎉</div>
+      <div style="flex:1;">
+        <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; margin-bottom:3px;" data-t="confirm_title">Application Submitted Successfully!</div>
+        <div style="font-size:13px; opacity:0.9;" data-t="confirm_body">Case #VA-2025-084721 created · Assigned to caseworker J. Thompson · Confirmation sent to maria.rodriguez@email.com and (571) ***-**47</div>
+      </div>
+      <div style="flex-shrink:0; text-align:right;">
+        <div style="font-size:11px; opacity:0.7; margin-bottom:2px;" data-t="submitted_label">Submitted</div>
+        <div style="font-family:'Montserrat',sans-serif; font-weight:700; font-size:14px;">Feb 14, 2025</div>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="hero-welcome" data-t="good_morning">Good morning</div>
+      <div class="hero-name" data-t="welcome_back">Welcome back, Maria</div>
+      <div class="hero-sub" data-t="hero_sub_post">Your SNAP application is under review. Here's your latest update.</div>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="showScreen('status')" data-t="btn_check_status">📍 Check Status</button>
+        <button class="btn-hero-outline" onclick="showScreen('documents')" data-t="btn_upload_docs">📎 Upload Documents</button>
+        <button class="btn-hero-outline" onclick="showScreen('messages')" data-t="btn_msg_worker">💬 Message Caseworker</button>
+      </div>
+    </div>
     <div class="hero-welcome">Good morning</div>
     <div class="hero-name">Welcome back, Maria</div>
     <div class="hero-sub">Your SNAP application is under review. Here's your latest update.</div>
@@ -883,28 +1000,28 @@
   <!-- Application Completeness Score -->
   <div class="mb-16">
     <div class="card">
-      <div class="card-title">🤖 AI Application Readiness Check</div>
+      <div class="card-title">🤖 <span data-t="ai_readiness_title">AI Application Readiness Check</span></div>
       <div class="score-ring-wrap">
         <div class="score-ring">
           <span class="score-ring-val">78%</span>
         </div>
         <div class="score-detail">
-          <div class="score-title">Application Completeness Score</div>
+          <div class="score-title"><span data-t="completeness_score_label">Application Completeness Score</span></div>
           <div class="score-items">
-            <span>✅ Personal information — Complete</span>
-            <span>✅ Household members — Complete</span>
-            <span>✅ Income verification — Complete</span>
-            <span>⚠️ Proof of residency — Pending upload</span>
-            <span>❌ Utility bill (last 30 days) — Missing</span>
+            <span><span data-t="check_personal">✅ Personal information — Complete</span></span>
+            <span><span data-t="check_household_done">✅ Household members — Complete</span></span>
+            <span><span data-t="check_income_done">✅ Income verification — Complete</span></span>
+            <span><span data-t="check_residency">⚠️ Proof of residency — Pending upload</span></span>
+            <span><span data-t="check_utility">❌ Utility bill (last 30 days) — Missing</span></span>
           </div>
         </div>
         <div style="text-align:right; flex-shrink:0;">
-          <div class="badge badge-warning" style="margin-bottom:6px;">2 Items Needed</div><br>
-          <button class="btn btn-primary btn-sm" onclick="showScreen('documents')">Fix Now</button>
+          <div class="badge badge-warning" style="margin-bottom:6px;"><span data-t="items_needed">2 Items Needed</span></div><br>
+          <button class="btn btn-primary btn-sm" onclick="showScreen('documents')"><span data-t="btn_fix_now">Fix Now</span></button>
         </div>
       </div>
       <div class="disclaimer">
-        <strong>ℹ️ About AI Assistance:</strong> This score is generated by an AI tool to help you submit a complete application. AI does <strong>not</strong> determine eligibility. Your assigned caseworker makes all final decisions in accordance with Virginia DSS guidelines.
+        <span data-t="ai_disclaimer"><strong>ℹ️ About AI Assistance:</strong> This score is generated by an AI tool to help you submit a complete application. AI does <strong>not</strong> determine eligibility. Your assigned caseworker makes all final decisions in accordance with Virginia DSS guidelines.</span>
       </div>
     </div>
   </div>
@@ -912,7 +1029,7 @@
   <!-- Quick Status -->
   <div class="grid-2 mb-16">
     <div class="card">
-      <div class="card-title">📍 Application Status</div>
+      <div class="card-title">📍 <span data-t="app_status_title">Application Status</span></div>
       <div style="margin-bottom:14px;">
         <div class="timeline">
           <div class="tl-step done">
@@ -927,7 +1044,7 @@
           </div>
           <div class="tl-step active">
             <div class="tl-dot">●</div>
-            <div class="tl-label">Under Review</div>
+            <div class="tl-label"><span data-t="badge_under_review">Under Review</span></div>
             <div class="tl-date">In progress</div>
           </div>
           <div class="tl-step">
@@ -942,66 +1059,66 @@
           <div style="font-size:12px; color:var(--gray);">Case #</div>
           <div style="font-size:14px; font-weight:700; color:var(--navy);">VA-2025-084721</div>
         </div>
-        <div class="badge badge-navy">Under Review</div>
+        <div class="badge badge-navy"><span data-t="badge_under_review">Under Review</span></div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">🔔 Recent Alerts</div>
+      <div class="card-title">🔔 <span data-t="recent_alerts_title">Recent Alerts</span></div>
       <div class="notif-item notif-unread">
         <div class="notif-dot" style="background:var(--warning);"></div>
         <div class="notif-content">
-          <div class="notif-title">Document Required</div>
-          <div class="notif-body">Please upload a utility bill dated within the last 30 days.</div>
+          <div class="notif-title"><span data-t="alert_doc_title">Document Required</span></div>
+          <div class="notif-body"><span data-t="alert_doc_body">Please upload a utility bill dated within the last 30 days.</span></div>
         </div>
         <div class="notif-time">2h ago</div>
       </div>
       <div class="notif-item notif-unread">
         <div class="notif-dot" style="background:var(--green);"></div>
         <div class="notif-content">
-          <div class="notif-title">Application Received</div>
-          <div class="notif-body">Your application has been received and assigned to a caseworker.</div>
+          <div class="notif-title"><span data-t="alert_recv_title">Application Received</span></div>
+          <div class="notif-body"><span data-t="alert_recv_body">Your application has been received and assigned to a caseworker.</span></div>
         </div>
         <div class="notif-time">Feb 14</div>
       </div>
-      <button class="btn-ghost" onclick="showScreen('notifications')" style="margin-top:8px; font-size:12px;">View all alerts →</button>
+      <button class="btn-ghost" onclick="showScreen('notifications')" style="margin-top:8px; font-size:12px;"><span data-t="btn_view_alerts">View all alerts →</span></button>
     </div>
   </div>
 
   <!-- Benefits Summary + Renewal -->
   <div class="grid-3 mb-16">
     <div class="benefit-tile">
-      <div class="benefit-label">🍎 Estimated SNAP Benefit</div>
+      <div class="benefit-label">🍎 <span data-t="estimated_benefit">Estimated SNAP Benefit</span></div>
       <div class="benefit-amount">$412</div>
-      <div class="benefit-period">per month (estimated, pending approval)</div>
+      <div class="benefit-period"><span data-t="per_month_est">per month (estimated, pending approval)</span></div>
     </div>
     <div class="card">
-      <div class="card-title">📅 Renewal Reminder</div>
-      <div style="font-size:13px; color:var(--gray); margin-bottom:10px;">Your current benefits expire:</div>
+      <div class="card-title">📅 <span data-t="renewal_title">Renewal Reminder</span></div>
+      <div style="font-size:13px; color:var(--gray); margin-bottom:10px;"><span data-t="benefits_expire">Your current benefits expire:</span></div>
       <div style="font-family:'Montserrat',sans-serif; font-size:22px; font-weight:800; color:var(--navy);">June 30, 2025</div>
-      <div style="font-size:12px; color:var(--gray); margin: 6px 0 12px;">131 days remaining</div>
+      <div style="font-size:12px; color:var(--gray); margin: 6px 0 12px;"><span data-t="days_remaining">131 days remaining</span></div>
       <div class="progress-bar"><div class="progress-fill" style="width:64%;"></div></div>
-      <div style="font-size:11px; color:var(--gray); margin-top:5px;">We'll remind you 60 days before expiration</div>
+      <div style="font-size:11px; color:var(--gray); margin-top:5px;"><span data-t="remind_60">We'll remind you 60 days before expiration</span></div>
     </div>
     <div class="card">
-      <div class="card-title">📋 Quick Actions</div>
+      <div class="card-title">📋 <span data-t="quick_actions_title">Quick Actions</span></div>
       <div style="display:flex; flex-direction:column; gap:8px;">
-        <button class="btn btn-outline btn-block" onclick="showScreen('apply')">📝 Continue Application</button>
-        <button class="btn btn-outline btn-block" onclick="showScreen('documents')">📎 Upload Document</button>
-        <button class="btn btn-outline btn-block" onclick="showScreen('messages')">💬 Contact Caseworker</button>
-        <button class="btn btn-outline btn-block">🏛️ Find a Kiosk Near Me</button>
+        <button class="btn btn-outline btn-block" onclick="showScreen('apply')"><span data-t="btn_continue_app">📝 Continue Application</span></button>
+        <button class="btn btn-outline btn-block" onclick="showScreen('documents')"><span data-t="btn_upload_doc">📎 Upload Document</span></button>
+        <button class="btn btn-outline btn-block" onclick="showScreen('messages')"><span data-t="btn_contact_worker">💬 Contact Caseworker</span></button>
+        <button class="btn btn-outline btn-block"><span data-t="btn_find_kiosk2">🏛️ Find a Kiosk Near Me</span></button>
       </div>
     </div>
   </div>
 
   <!-- Shared Service Centers -->
   <div class="card mb-16">
-    <div class="card-title">🏛️ Need Help Applying? Visit a Shared Service Center</div>
+    <div class="card-title"><span data-t="ssc_title">🏛️ Need Help Applying? Visit a Shared Service Center</span></div>
     <div class="grid-4">
       <div class="kiosk-card">
         <div class="kiosk-icon">📚</div>
         <div class="kiosk-title">Public Libraries</div>
-        <div class="kiosk-text">Free-access kiosks with assisted application support at 47 locations statewide.</div>
+        <div class="kiosk-text">Free-access kiosks with assisted application support at 47 locations statewide.</span></div>
       </div>
       <div class="kiosk-card">
         <div class="kiosk-icon">🏢</div>
@@ -1020,6 +1137,8 @@
       </div>
     </div>
   </div>
+
+  </div><!-- end #home-postsubmit -->
 
 </div>
 </div>
@@ -2093,6 +2212,151 @@
 <script>
   let currentRole = null;
 
+  let currentLang = 'en';
+  const T = {
+    en: {
+      portal_label:'Applicant Portal — Welcome',portal_label_post:'Applicant Portal — Home Dashboard',
+      good_morning:'Good morning',welcome_name:'Welcome, Maria Rodriguez',welcome_back:'Welcome back, Maria',
+      hero_sub_pre:"You're signed in to SmartApply VA. You have no active applications yet. Start your SNAP application below — it takes about 10–15 minutes.",
+      hero_sub_post:"Your SNAP application is under review. Here's your latest update.",
+      btn_start_app:'📋 Start SNAP Application',btn_find_kiosk:'🏛️ Find a Kiosk Near Me',
+      step1_title:'Step 1 — Complete Your Application',step1_body:'Fill out household, income, and expense information. AI checks for missing items as you go.',
+      step2_title:'Step 2 — Upload Documents',step2_body:'Photo-scan your ID, proof of income, and residency. AI pre-verifies uploads instantly.',
+      step3_title:'Step 3 — Submit & Track',step3_body:'Submit your application and track its status in real time. Get updates by SMS, email, or push notification.',
+      form_card_title:'🚀 Ready to Apply for SNAP Benefits?',
+      form_card_desc:"SNAP (Supplemental Nutrition Assistance Program) provides monthly food assistance to eligible Virginia households. Let's get started — we'll guide you through every step.",
+      label_first_name:'First Name',label_last_name:'Last Name',label_dob:'Date of Birth',
+      label_county:'Virginia County / City',label_benefit_type:'Benefit Type',
+      benefit_opt1:'SNAP (Food Assistance) — New Application',benefit_opt2:'SNAP — Renewal',benefit_opt3:'TANF (Temporary Assistance)',
+      consent_text:'I certify that the information I provide will be true and correct to the best of my knowledge. I understand that providing false information may result in disqualification or legal action under Virginia law.',
+      btn_submit_app:'✅ Submit Application & Continue',
+      form_security_note:'🔒 Your information is encrypted and secure. Case number assigned upon submission.',
+      kiosk_title:'🏛️ Find a Shared Service Center Kiosk',
+      kiosk_lib_title:'Public Libraries',kiosk_lib_body:'47 locations statewide with staff-assisted kiosks.',
+      kiosk_dss_title:'DSS Offices',kiosk_dss_body:'Full-service support with bilingual staff.',
+      kiosk_col_title:'Community Colleges',kiosk_col_body:'23 Virginia campuses, open to the public.',
+      kiosk_lang_title:'Language Access',kiosk_lang_body:'6 languages built-in. 200+ via phone.',
+      submitting_title:'Submitting Your Application…',submitting_sub:'AI is checking your application for completeness. This takes just a moment.',
+      check_household:'Validating household information…',check_income:'Checking income details…',check_ai:'Running AI completeness check…',
+      confirm_title:'Application Submitted Successfully!',
+      confirm_body:'Case #VA-2025-084721 created · Assigned to caseworker J. Thompson · Confirmation sent to maria.rodriguez@email.com and (571) ***-**47',
+      submitted_label:'Submitted',btn_check_status:'📍 Check Status',btn_upload_docs:'📎 Upload Documents',btn_msg_worker:'💬 Message Caseworker',
+      ai_readiness_title:'AI Application Readiness Check',completeness_score_label:'Application Completeness Score',
+      check_personal:'✅ Personal information — Complete',check_household_done:'✅ Household members — Complete',
+      check_income_done:'✅ Income verification — Complete',check_residency:'⚠️ Proof of residency — Pending upload',
+      check_utility:'❌ Utility bill (last 30 days) — Missing',items_needed:'2 Items Needed',btn_fix_now:'Fix Now',
+      ai_disclaimer:'<strong>ℹ️ About AI Assistance:</strong> This score is generated by an AI tool to help you submit a complete application. AI does <strong>not</strong> determine eligibility. Your assigned caseworker makes all final decisions in accordance with Virginia DSS guidelines.',
+      app_status_title:'Application Status',tl_submitted:'Submitted',tl_received:'Received',tl_review:'Under Review',
+      tl_in_progress:'In progress',tl_decision:'Decision',badge_under_review:'Under Review',case_num_label:'Case #',
+      recent_alerts_title:'Recent Alerts',alert_doc_title:'Document Required',
+      alert_doc_body:'Please upload a utility bill dated within the last 30 days.',
+      alert_recv_title:'Application Received',alert_recv_body:'Your application has been received and assigned to a caseworker.',
+      btn_view_alerts:'View all alerts →',estimated_benefit:'Estimated SNAP Benefit',
+      per_month_est:'per month (estimated, pending approval)',renewal_title:'Renewal Reminder',
+      benefits_expire:'Your current benefits expire:',days_remaining:'131 days remaining',
+      remind_60:"We'll remind you 60 days before expiration",quick_actions_title:'Quick Actions',
+      btn_continue_app:'📝 Continue Application',btn_upload_doc:'📎 Upload Document',
+      btn_contact_worker:'💬 Contact Caseworker',btn_find_kiosk2:'🏛️ Find a Kiosk Near Me',
+      ssc_title:'🏛️ Need Help Applying? Visit a Shared Service Center',
+      kiosk2_lib_title:'Public Libraries',kiosk2_lib_body:'Free-access kiosks with assisted application support at 47 locations statewide.',
+      kiosk2_dss_title:'DSS Offices',kiosk2_dss_body:'Full-service support with bilingual staff at all Virginia DSS offices.',
+      kiosk2_col_title:'Community Colleges',kiosk2_col_body:'Kiosks at 23 Virginia community college campuses, open to the public.',
+      kiosk2_lang_title:'Language Access',kiosk2_lang_body:'Available in 6 languages. Phone interpretation in 200+ languages on request.'
+    },
+    es: {
+      portal_label:'Portal del Solicitante — Bienvenido',portal_label_post:'Portal del Solicitante — Panel Principal',
+      good_morning:'Buenos días',welcome_name:'Bienvenida, Maria Rodriguez',welcome_back:'Bienvenida de nuevo, Maria',
+      hero_sub_pre:'Ha iniciado sesión en SmartApply VA. Aún no tiene solicitudes activas. Comience su solicitud de SNAP a continuación — toma entre 10 y 15 minutos.',
+      hero_sub_post:'Su solicitud de SNAP está en revisión. Aquí está su última actualización.',
+      btn_start_app:'📋 Iniciar Solicitud de SNAP',btn_find_kiosk:'🏛️ Encontrar un Quiosco Cerca de Mí',
+      step1_title:'Paso 1 — Complete Su Solicitud',step1_body:'Complete la información del hogar, ingresos y gastos. La IA verifica los elementos faltantes a medida que avanza.',
+      step2_title:'Paso 2 — Subir Documentos',step2_body:'Escanee con foto su identificación, comprobante de ingresos y residencia. La IA verifica las cargas al instante.',
+      step3_title:'Paso 3 — Enviar y Rastrear',step3_body:'Envíe su solicitud y rastree su estado en tiempo real. Reciba actualizaciones por SMS, correo electrónico o notificación push.',
+      form_card_title:'🚀 ¿Listo para Solicitar los Beneficios de SNAP?',
+      form_card_desc:"SNAP (Programa de Asistencia Nutricional Suplementaria) proporciona asistencia alimentaria mensual a hogares de Virginia elegibles. Empecemos — le guiaremos en cada paso.",
+      label_first_name:'Nombre',label_last_name:'Apellido',label_dob:'Fecha de Nacimiento',
+      label_county:'Condado / Ciudad de Virginia',label_benefit_type:'Tipo de Beneficio',
+      benefit_opt1:'SNAP (Asistencia Alimentaria) — Solicitud Nueva',benefit_opt2:'SNAP — Renovación',benefit_opt3:'TANF (Asistencia Temporal)',
+      consent_text:'Certifico que la información que proporciono será verdadera y correcta a mi leal saber y entender. Entiendo que proporcionar información falsa puede resultar en descalificación o acción legal bajo la ley de Virginia.',
+      btn_submit_app:'✅ Enviar Solicitud y Continuar',
+      form_security_note:'🔒 Su información está encriptada y segura. Número de caso asignado al enviar.',
+      kiosk_title:'🏛️ Encontrar un Quiosco de Centro de Servicio',
+      kiosk_lib_title:'Bibliotecas Públicas',kiosk_lib_body:'47 ubicaciones en todo el estado con quioscos asistidos por personal.',
+      kiosk_dss_title:'Oficinas DSS',kiosk_dss_body:'Servicio completo con personal bilingüe.',
+      kiosk_col_title:'Universidades Comunitarias',kiosk_col_body:'23 campus en Virginia, abiertos al público.',
+      kiosk_lang_title:'Acceso a Idiomas',kiosk_lang_body:'6 idiomas integrados. Más de 200 por teléfono.',
+      submitting_title:'Enviando Su Solicitud…',submitting_sub:'La IA está verificando la completitud de su solicitud. Esto toma solo un momento.',
+      check_household:'Validando información del hogar…',check_income:'Verificando detalles de ingresos…',check_ai:'Ejecutando verificación de completitud de IA…',
+      confirm_title:'¡Solicitud Enviada Exitosamente!',
+      confirm_body:'Caso #VA-2025-084721 creado · Asignado al trabajador J. Thompson · Confirmación enviada a maria.rodriguez@email.com y (571) ***-**47',
+      submitted_label:'Enviado',btn_check_status:'📍 Verificar Estado',btn_upload_docs:'📎 Subir Documentos',btn_msg_worker:'💬 Mensaje al Trabajador Social',
+      ai_readiness_title:'Verificación de Preparación de Solicitud IA',completeness_score_label:'Puntuación de Completitud de Solicitud',
+      check_personal:'✅ Información personal — Completa',check_household_done:'✅ Miembros del hogar — Completo',
+      check_income_done:'✅ Verificación de ingresos — Completa',check_residency:'⚠️ Comprobante de residencia — Pendiente de carga',
+      check_utility:'❌ Factura de servicios (últimos 30 días) — Faltante',items_needed:'2 Elementos Necesarios',btn_fix_now:'Corregir Ahora',
+      ai_disclaimer:'<strong>ℹ️ Sobre la Asistencia de IA:</strong> Esta puntuación es generada por una herramienta de IA para ayudarle a enviar una solicitud completa. La IA <strong>no</strong> determina la elegibilidad. Su trabajador social asignado toma todas las decisiones finales conforme a las pautas de Virginia DSS.',
+      app_status_title:'Estado de la Solicitud',tl_submitted:'Enviada',tl_received:'Recibida',tl_review:'En Revisión',
+      tl_in_progress:'En proceso',tl_decision:'Decisión',badge_under_review:'En Revisión',case_num_label:'Caso #',
+      recent_alerts_title:'Alertas Recientes',alert_doc_title:'Documento Requerido',
+      alert_doc_body:'Por favor suba una factura de servicios con fecha de los últimos 30 días.',
+      alert_recv_title:'Solicitud Recibida',alert_recv_body:'Su solicitud ha sido recibida y asignada a un trabajador social.',
+      btn_view_alerts:'Ver todas las alertas →',estimated_benefit:'Beneficio SNAP Estimado',
+      per_month_est:'por mes (estimado, pendiente de aprobación)',renewal_title:'Recordatorio de Renovación',
+      benefits_expire:'Sus beneficios actuales expiran:',days_remaining:'131 días restantes',
+      remind_60:'Le recordaremos 60 días antes del vencimiento',quick_actions_title:'Acciones Rápidas',
+      btn_continue_app:'📝 Continuar Solicitud',btn_upload_doc:'📎 Subir Documento',
+      btn_contact_worker:'💬 Contactar Trabajador Social',btn_find_kiosk2:'🏛️ Encontrar un Quiosco Cerca de Mí',
+      ssc_title:'🏛️ ¿Necesita Ayuda para Solicitar? Visite un Centro de Servicio Compartido',
+      kiosk2_lib_title:'Bibliotecas Públicas',kiosk2_lib_body:'Quioscos de acceso gratuito con asistencia de personal en 47 ubicaciones en todo el estado.',
+      kiosk2_dss_title:'Oficinas DSS',kiosk2_dss_body:'Servicio completo con personal bilingüe en todas las oficinas DSS de Virginia.',
+      kiosk2_col_title:'Universidades Comunitarias',kiosk2_col_body:'Quioscos en 23 campus comunitarios de Virginia, abiertos al público.',
+      kiosk2_lang_title:'Acceso a Idiomas',kiosk2_lang_body:'Disponible en 6 idiomas. Interpretación telefónica en más de 200 idiomas a solicitud.'
+    }
+  };
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+      const oc = btn.getAttribute('onclick') || '';
+      if (oc.includes("'" + lang + "'")) btn.classList.add('active');
+    });
+    const t = T[lang] || T['en'];
+    document.querySelectorAll('[data-t]').forEach(el => {
+      const key = el.getAttribute('data-t');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+  }
+
+
+  // Application submission flow
+  function submitApplication() {
+    // Hide pre-submit, show loading state
+    document.getElementById('home-presubmit').style.display = 'none';
+    document.getElementById('home-confirming').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Animate AI bar filling
+    setTimeout(() => {
+      document.getElementById('ai-bar').style.width = '78%';
+    }, 300);
+
+    // After 2.4s, swap to post-submit dashboard
+    setTimeout(() => {
+      document.getElementById('home-confirming').style.display = 'none';
+      document.getElementById('home-postsubmit').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 2600);
+  }
+
+  // Reset home to pre-submit (used by signOut)
+  function resetHomeScreen() {
+    document.getElementById('home-presubmit').style.display = 'block';
+    document.getElementById('home-confirming').style.display = 'none';
+    document.getElementById('home-postsubmit').style.display = 'none';
+    document.getElementById('kiosk-info').style.display = 'none';
+  }
+
   // Role selection on login screen
   function selectRole(role) {
     currentRole = role;
@@ -2156,6 +2420,7 @@
     document.getElementById('card-caseworker').className = 'portal-card';
     // Hide all screens
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    resetHomeScreen();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -2173,6 +2438,5 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
-
 </body>
 </html>
