@@ -838,7 +838,6 @@
     <button class="nav-tab" onclick="showScreen('apply')">📋 Apply</button>
     <button class="nav-tab" onclick="showScreen('documents')">📎 Documents</button>
     <button class="nav-tab" onclick="showScreen('status')">📍 Status</button>
-    <button class="nav-tab" onclick="showScreen('messages')">💬 Messages</button>
     <button class="nav-tab" onclick="showScreen('notifications')">🔔 Alerts</button>
     <button class="nav-tab" onclick="showScreen('caseworker')">👔 Caseworker</button>
     <button class="nav-tab" onclick="showScreen('architecture')">⚙️ Architecture</button>
@@ -910,7 +909,7 @@
       <div class="form-row" style="margin-bottom:14px;">
         <div class="form-field">
           <div class="form-label"><span data-t="label_dob">Date of Birth</span> <span class="req">*</span></div>
-          <input class="form-input" type="text" value="08/14/1989" />
+          <input class="form-input" type="text" value="03/22/1990" />
         </div>
         <div class="form-field">
           <div class="form-label"><span data-t="label_county">Virginia County / City</span> <span class="req">*</span></div>
@@ -919,6 +918,7 @@
             <option>Fairfax County</option>
             <option>Virginia Beach</option>
             <option>Chesterfield County</option>
+            <option selected>Petersburg City</option>
           </select>
         </div>
       </div>
@@ -970,7 +970,7 @@
       <div style="font-size:32px; flex-shrink:0;">🎉</div>
       <div style="flex:1;">
         <div style="font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; margin-bottom:3px;" data-t="confirm_title">Application Submitted Successfully!</div>
-        <div style="font-size:13px; opacity:0.9;" data-t="confirm_body">Case #VA-2025-084721 created · Assigned to caseworker J. Thompson · Confirmation sent to maria.rodriguez@email.com and (571) ***-**47</div>
+        <div style="font-size:13px; opacity:0.9;" data-t="confirm_body">Case #VA-2025-084721 created · Assigned to caseworker J. Thompson · Confirmation sent to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a474b58434b0458454e58434d5f4f506a4f474b434604494547">[email&#160;protected]</a> and (571) ***-**47</div>
       </div>
       <div style="flex-shrink:0; text-align:right;">
         <div style="font-size:11px; opacity:0.7; margin-bottom:2px;" data-t="submitted_label">Submitted</div>
@@ -984,7 +984,7 @@
       <div class="hero-actions">
         <button class="btn-hero-primary" onclick="showScreen('status')" data-t="btn_check_status">📍 Check Status</button>
         <button class="btn-hero-outline" onclick="showScreen('documents')" data-t="btn_upload_docs">📎 Upload Documents</button>
-        <button class="btn-hero-outline" onclick="showScreen('messages')" data-t="btn_msg_worker">💬 Message Caseworker</button>
+        
       </div>
     </div>
     <div class="hero-welcome">Good morning</div>
@@ -993,7 +993,7 @@
     <div class="hero-actions">
       <button class="btn-hero-primary" onclick="showScreen('status')">📍 Check Status</button>
       <button class="btn-hero-outline" onclick="showScreen('documents')">📎 Upload Documents</button>
-      <button class="btn-hero-outline" onclick="showScreen('messages')">💬 Message Caseworker</button>
+      
     </div>
   </div>
 
@@ -1105,7 +1105,7 @@
       <div style="display:flex; flex-direction:column; gap:8px;">
         <button class="btn btn-outline btn-block" onclick="showScreen('apply')"><span data-t="btn_continue_app">📝 Continue Application</span></button>
         <button class="btn btn-outline btn-block" onclick="showScreen('documents')"><span data-t="btn_upload_doc">📎 Upload Document</span></button>
-        <button class="btn btn-outline btn-block" onclick="showScreen('messages')"><span data-t="btn_contact_worker">💬 Contact Caseworker</span></button>
+        
         <button class="btn btn-outline btn-block"><span data-t="btn_find_kiosk2">🏛️ Find a Kiosk Near Me</span></button>
       </div>
     </div>
@@ -1169,7 +1169,7 @@
           <div class="form-field">
             <div class="form-label">Employment Status <span class="req">*</span></div>
             <select class="form-input">
-              <option>Employed (Part-time)</option>
+              <option selected>Employed (Part-time) — Hours Recently Reduced</option>
               <option>Employed (Full-time)</option>
               <option>Unemployed</option>
               <option>Self-employed</option>
@@ -1177,13 +1177,13 @@
           </div>
           <div class="form-field">
             <div class="form-label">Employer Name</div>
-            <input class="form-input" type="text" value="Riverside Café" />
+            <input class="form-input" type="text" value="Sunrise Group Home" />
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
             <div class="form-label">Gross Monthly Income <span class="req">*</span></div>
-            <input class="form-input" type="text" value="$1,240" />
+            <input class="form-input" type="text" value="$980" />
             <div class="form-hint">Before taxes and deductions</div>
           </div>
           <div class="form-field">
@@ -1210,15 +1210,15 @@
         <div style="font-size:13px; color:var(--gray); margin-bottom:10px;">3 members in your household</div>
         <div style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center; padding:9px 12px; background:var(--gray-light); border-radius:7px;">
-            <div><span style="font-weight:600; font-size:13px;">Maria Rodriguez</span> <span class="tag">Head of Household</span></div>
+            <div><span style="font-weight:600; font-size:13px;">Maria Rodriguez</span> <span class="tag">Head of Household</span> <span class="tag">Single</span></div>
             <div class="badge badge-green">✓</div>
           </div>
           <div style="display:flex; justify-content:space-between; align-items:center; padding:9px 12px; background:var(--gray-light); border-radius:7px;">
-            <div><span style="font-weight:600; font-size:13px;">Carlos Rodriguez</span> <span class="tag">Spouse</span></div>
+            <div><span style="font-weight:600; font-size:13px;">Matthew Rodriguez</span> <span class="tag">Child, Age 9</span></div>
             <div class="badge badge-green">✓</div>
           </div>
           <div style="display:flex; justify-content:space-between; align-items:center; padding:9px 12px; background:var(--gray-light); border-radius:7px;">
-            <div><span style="font-weight:600; font-size:13px;">Sofia Rodriguez</span> <span class="tag">Child, Age 7</span></div>
+            <div><span style="font-weight:600; font-size:13px;">Miguel Rodriguez</span> <span class="tag">Child, Age 6</span></div>
             <div class="badge badge-green">✓</div>
           </div>
         </div>
@@ -1526,7 +1526,7 @@
             <span class="badge badge-green">Active</span>
           </div>
           <div style="display:flex; justify-content:space-between; align-items:center; font-size:13px;">
-            <span>📮 Mail to 1234 Oak St, Richmond</span>
+            <span>📮 Mail to 412 Wythe St, Petersburg, VA 23803</span>
             <span class="badge badge-green">Active</span>
           </div>
         </div>
@@ -1535,7 +1535,7 @@
       <div class="card">
         <div class="card-title">❓ Need Help?</div>
         <div style="display:flex; flex-direction:column; gap:8px;">
-          <button class="btn btn-primary btn-block" onclick="showScreen('messages')">💬 Message My Caseworker</button>
+          
           <button class="btn btn-outline btn-block">📞 Call DSS: (804) 555-0100</button>
           <button class="btn btn-outline btn-block">🏛️ Find Nearest Kiosk</button>
         </div>
@@ -1548,74 +1548,6 @@
 <!-- ════════════════════════════════════════════════════════ -->
 <!-- SCREEN 5: SECURE MESSAGES                              -->
 <!-- ════════════════════════════════════════════════════════ -->
-<div id="screen-messages" class="screen">
-<div class="page-wrapper">
-  <span class="screen-label">💬 Applicant Portal — Secure Messaging</span>
-  <div class="section-header">Messages</div>
-  <div class="section-sub">Secure, encrypted communication with your assigned caseworker.</div>
-
-  <div class="grid-2">
-    <div class="card">
-      <div class="card-title">📬 Conversation with J. Thompson — Caseworker</div>
-      <div style="max-height:340px; overflow-y:auto; padding-right:4px; margin-bottom:6px;">
-        <!-- Messages -->
-        <div class="msg-meta">Feb 14, 2025 · 3:15 PM · J. Thompson (Caseworker)</div>
-        <div class="msg-bubble recv">Hello Maria, I've been assigned to your SNAP application (Case #VA-2025-084721). I'll be reviewing your file over the next few days. Please make sure all required documents are uploaded as soon as possible.</div>
-
-        <div class="msg-meta right">Feb 14, 2025 · 4:02 PM · You</div>
-        <div class="msg-bubble sent">Thank you! I uploaded my ID and pay stub. Still working on getting a recent utility bill. Is there another document I can use for proof of residency?</div>
-
-        <div class="msg-meta">Feb 15, 2025 · 9:30 AM · J. Thompson (Caseworker)</div>
-        <div class="msg-bubble recv">Yes — a signed lease agreement dated within the last 12 months is also acceptable. A bank statement showing your address from the last 60 days works too. Either one will satisfy the residency requirement.</div>
-
-        <div class="msg-meta right">Feb 15, 2025 · 11:14 AM · You</div>
-        <div class="msg-bubble sent">Great, I have a lease agreement. I'll upload it today. Thank you!</div>
-
-        <div class="msg-meta">Feb 16, 2025 · 2:00 PM · J. Thompson (Caseworker)</div>
-        <div class="msg-bubble recv">Your pay stub was received and verified. I still need the lease agreement and a utility bill or bank statement. Once those are uploaded, I can continue the review. Estimated decision date is Feb 28.</div>
-      </div>
-      <div class="msg-input-wrap">
-        <input class="msg-input" type="text" placeholder="Type a message to your caseworker…" />
-        <button class="btn btn-primary">Send</button>
-      </div>
-      <div style="font-size:11px; color:var(--gray); margin-top:6px; text-align:center;">🔒 Messages are encrypted and stored securely. Response time: 1–2 business days.</div>
-    </div>
-
-    <div>
-      <div class="card mb-16">
-        <div class="card-title">📋 Conversation Info</div>
-        <div style="display:flex; flex-direction:column; gap:0;">
-          <div class="metric-row"><span class="metric-name">Caseworker</span><span class="metric-val" style="font-size:14px;">J. Thompson</span></div>
-          <div class="metric-row"><span class="metric-name">Office</span><span class="metric-val" style="font-size:13px;">Richmond DSS — District 4</span></div>
-          <div class="metric-row"><span class="metric-name">Messages</span><span class="metric-val" style="font-size:14px;">5 total</span></div>
-          <div class="metric-row"><span class="metric-name">Last Response</span><span class="metric-val" style="font-size:13px;">Feb 16 (Today)</span></div>
-          <div class="metric-row"><span class="metric-name">Avg. Response</span><span class="metric-val" style="font-size:13px;">< 1 business day</span></div>
-        </div>
-      </div>
-      <div class="card mb-16">
-        <div class="card-title">📎 Attachments in This Thread</div>
-        <div class="doc-item">
-          <div class="doc-icon uploaded">📄</div>
-          <div class="doc-info">
-            <div class="doc-name">Pay_Stub_Jan2025.pdf</div>
-            <div class="doc-status">Sent Feb 14 · Received by caseworker</div>
-          </div>
-        </div>
-        <button class="btn btn-outline btn-block" style="margin-top:8px;" onclick="showScreen('documents')">📎 Attach Document from Document Center</button>
-      </div>
-      <div class="card">
-        <div class="card-title">📞 Other Contact Options</div>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <button class="btn btn-outline btn-block">📞 Request Phone Call</button>
-          <button class="btn btn-outline btn-block">🗓️ Schedule In-Person Meeting</button>
-          <button class="btn btn-outline btn-block">🌐 Language Assistance</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
 <!-- ════════════════════════════════════════════════════════ -->
 <!-- SCREEN 6: NOTIFICATIONS                                -->
 <!-- ════════════════════════════════════════════════════════ -->
@@ -1653,7 +1585,7 @@
           </div>
           <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0;">
             <div class="notif-time">Feb 16</div>
-            <button class="btn btn-outline btn-sm" onclick="showScreen('messages')">Reply</button>
+            
           </div>
         </div>
 
@@ -1804,8 +1736,8 @@
         <div class="ai-flag">
           <div class="ai-flag-icon">⚠️</div>
           <div class="ai-flag-text">
-            <div class="ai-flag-title">Case #VA-2025-084721 (Maria R.) — Documents Pending</div>
-            <div class="ai-flag-body">2 required documents not yet uploaded (utility bill, lease). AI score: 78%. Reminder sent to applicant Feb 16.</div>
+            <div class="ai-flag-title">Case #VA-2025-084721 (Maria R.) — Documents Pending + Hours Reduction</div>
+            <div class="ai-flag-body">2 documents missing (residency proof, childcare receipts). AI score: 78%. Note: recent hours cut from 32→18/week at Sunrise Group Home — possible expedited eligibility. Reminder sent Feb 16.</div>
           </div>
           <button class="btn btn-outline btn-sm" style="flex-shrink:0; align-self:center;" onclick="showScreen('home')">Request Info</button>
         </div>
@@ -1867,10 +1799,10 @@
         </div>
 
         <!-- Rodriguez — Docs pending -->
-        <div style="background:#FFFBEB; border-radius:8px; padding:12px 14px; margin-bottom:8px; border-left:3px solid var(--warning);">
+        <div onclick="showScreen('case-maria')" style="background:#FFFBEB; border-radius:8px; padding:12px 14px; margin-bottom:8px; border-left:3px solid var(--warning); cursor:pointer; transition:box-shadow 0.18s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.10)'" onmouseout="this.style.boxShadow='none'">
           <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
             <div>
-              <div class="case-name">Rodriguez, M.</div>
+              <div class="case-name" style="display:flex; align-items:center; gap:6px;">Rodriguez, M. <span style="font-size:10px; background:#FEF3C7; color:#92400E; border-radius:4px; padding:2px 7px; font-weight:700; letter-spacing:0.3px;">CLICK TO OPEN</span></div>
               <div class="case-id">#VA-2025-084721</div>
             </div>
             <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap; justify-content:flex-end;">
@@ -1880,11 +1812,10 @@
               <span style="font-weight:700; font-size:13px;">Day 4</span>
             </div>
           </div>
-          <div style="font-size:12px; color:var(--gray); margin-bottom:8px;">Missing: Proof of residency, utility bill · Reminder sent Feb 16 · Application on hold pending docs</div>
+          <div style="font-size:12px; color:var(--gray); margin-bottom:8px;">Petersburg, VA · Single parent, 2 children (Matthew age 9, Miguel age 6) · Hours cut 32→18/week at Sunrise Group Home · Missing: residency proof, childcare receipts</div>
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
-            <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
-            <button class="btn btn-outline btn-sm">📋 Request Missing Info</button>
-            <button class="btn btn-outline btn-sm">💬 Message Applicant</button>
+            <button onclick="event.stopPropagation(); showScreen('case-maria')" class="btn btn-primary btn-sm">📂 Open Case</button>
+            <button onclick="event.stopPropagation(); showScreen('case-maria'); setTimeout(showRequestInfo,100);" class="btn btn-outline btn-sm">📋 Request Missing Info</button>
           </div>
         </div>
 
@@ -1906,7 +1837,7 @@
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
             <button class="btn btn-green btn-sm">✅ Mark Ready for Determination</button>
-            <button class="btn btn-outline btn-sm">💬 Message Applicant</button>
+            
           </div>
         </div>
 
@@ -1928,7 +1859,7 @@
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
             <button class="btn btn-green btn-sm">✅ Mark Ready for Determination</button>
-            <button class="btn btn-outline btn-sm">💬 Message Applicant</button>
+            
           </div>
         </div>
 
@@ -1950,7 +1881,7 @@
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
             <button class="btn btn-outline btn-sm">📋 Request Missing Info</button>
-            <button class="btn btn-outline btn-sm">💬 Message Applicant</button>
+            
             <button class="btn btn-outline btn-sm">🚩 Flag for Supervisor</button>
           </div>
         </div>
@@ -1973,7 +1904,7 @@
           <div style="display:flex; gap:6px; flex-wrap:wrap;">
             <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
             <button class="btn btn-green btn-sm">✅ Mark Ready for Determination</button>
-            <button class="btn btn-outline btn-sm">💬 Message Applicant</button>
+            
           </div>
         </div>
 
@@ -1990,9 +1921,11 @@
       <div class="card-title">🤖 AI Case Summary — Maria R. (#084721)</div>
       <div style="background:var(--gray-light); border-radius:7px; padding:12px; font-size:13px; color:var(--text); line-height:1.7; border-left:3px solid var(--navy); margin-bottom:12px;">
         <strong>Auto-generated summary (caseworker must independently verify all information):</strong><br>
-        Applicant: Maria Rodriguez | HH Size: 3 | Gross Monthly Income: $1,240 (part-time, Riverside Café)<br>
-        Documents: ID ✓, SSN ✓, Pay stub Jan ✓ | Missing: Proof of residency, utility bill / bank statement<br>
-        AI Completeness: 78% | Expedited flag: Possible — income below threshold, caseworker to verify<br>
+        Applicant: Maria Rodriguez | Single parent | HH Size: 3 | City: Petersburg, VA<br>
+        Children: Matthew Rodriguez (age 9), Miguel Rodriguez (age 6)<br>
+        Employer: Sunrise Group Home | Hours recently reduced: 32 → 18/week | Gross Monthly Income: ~$980<br>
+        Documents: ID ✓, SSN ✓, Pay stubs (showing hours change) ✓ | Missing: Residency proof (Petersburg), childcare receipts<br>
+        AI Completeness: 78% | Expedited flag: Likely — income below threshold for HH of 3, hours cut documented<br>
         Triage status: Awaiting 2 documents · Reminder sent Feb 16 · Est. ready for DSS by Feb 28
       </div>
       <div style="font-size:11px; color:var(--gray); margin-bottom:12px;">⚠️ AI-generated summaries are for review assistance only. Caseworkers must verify all information. This tool does not determine eligibility.</div>
@@ -2061,6 +1994,227 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- SCREEN: MARIA CASE DETAIL                              -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div id="screen-case-maria" class="screen">
+<div class="page-wrapper">
+
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+    <button onclick="showScreen('caseworker')" style="background:var(--gray-light); border:none; border-radius:6px; padding:7px 14px; font-size:13px; font-weight:600; color:var(--navy); cursor:pointer; font-family:'Source Sans 3',sans-serif;">← Back to Queue</button>
+    <span class="screen-label caseworker" style="margin-bottom:0;">👔 Case Detail View</span>
+  </div>
+
+  <!-- Case Header -->
+  <div style="background:linear-gradient(135deg, var(--navy) 0%, #2563a8 100%); border-radius:12px; padding:24px 28px; color:white; margin-bottom:20px; display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+    <div>
+      <div style="font-size:11px; letter-spacing:1.2px; text-transform:uppercase; opacity:0.65; margin-bottom:6px; font-weight:600;">Case #VA-2025-084721 · Petersburg DSS — District 7</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:26px; font-weight:800; margin-bottom:4px;">Maria Rodriguez</div>
+      <div style="font-size:13px; opacity:0.85; margin-bottom:12px;">Single parent · Petersburg, VA · SNAP New Application · Submitted Feb 14, 2025</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <span class="badge" style="background:rgba(245,158,11,0.25); color:#FDE68A; font-size:11px;">⚠️ Docs Needed</span>
+        <span class="badge" style="background:rgba(255,255,255,0.15); color:white; font-size:11px;">📋 Standard Queue</span>
+        <span class="badge" style="background:rgba(239,68,68,0.25); color:#FCA5A5; font-size:11px;">⚡ Possible Expedited</span>
+        <span class="badge" style="background:rgba(255,255,255,0.15); color:white; font-size:11px;">Day 4 of 30</span>
+      </div>
+    </div>
+    <div style="text-align:right; flex-shrink:0;">
+      <div style="font-size:11px; opacity:0.65; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.8px;">AI Completeness</div>
+      <div style="font-family:'Montserrat',sans-serif; font-size:48px; font-weight:800; line-height:1; color:#FDE68A;">78%</div>
+      <div style="font-size:11px; opacity:0.65; margin-top:4px;">2 items missing</div>
+    </div>
+  </div>
+
+  <!-- Triage Actions Bar -->
+  <div style="background:white; border-radius:10px; box-shadow:var(--shadow); padding:14px 18px; margin-bottom:20px; display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+    <div style="font-size:11px; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.6px; margin-right:4px; flex-shrink:0;">Triage Actions:</div>
+    <button class="btn btn-primary btn-sm">🏛️ View in DSS</button>
+    <button class="btn btn-green btn-sm" id="btn-mark-ready" onclick="markReady()">✅ Mark Ready for Determination</button>
+    <button class="btn btn-outline btn-sm" onclick="showRequestInfo()">📋 Request Missing Info</button>
+    <button class="btn btn-outline btn-sm" style="border-color:var(--warning); color:#92400E;">🚩 Flag for Supervisor</button>
+  </div>
+
+  <!-- Mark Ready confirmation (hidden) -->
+  <div id="ready-confirm" style="display:none; background:#F0FDF4; border:1.5px solid var(--green); border-radius:8px; padding:12px 16px; margin-bottom:16px; display:none; align-items:center; gap:10px;">
+    <span style="font-size:20px;">✅</span>
+    <div style="font-size:13px; color:var(--green-dark);"><strong>Case marked ready for determination.</strong> This case has been flagged in the DSS system queue for final eligibility processing by an authorized eligibility worker.</div>
+  </div>
+
+  <!-- Request info panel (hidden) -->
+  <div id="request-info-panel" style="display:none; background:white; border-radius:10px; box-shadow:var(--shadow); padding:18px; margin-bottom:16px;">
+    <div class="card-title">📋 Request Missing Information from Applicant</div>
+    <div style="font-size:13px; color:var(--gray); margin-bottom:12px;">Select which documents to request. A notification will be sent via SMS and email.</div>
+    <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:14px;">
+      <label style="display:flex; gap:8px; align-items:center; font-size:13px; cursor:pointer; padding:8px 10px; background:var(--gray-light); border-radius:6px;"><input type="checkbox" checked /> Proof of residency (lease agreement or utility bill)</label>
+      <label style="display:flex; gap:8px; align-items:center; font-size:13px; cursor:pointer; padding:8px 10px; background:var(--gray-light); border-radius:6px;"><input type="checkbox" checked /> Childcare receipts or provider statement (Matthew &amp; Miguel)</label>
+      <label style="display:flex; gap:8px; align-items:center; font-size:13px; cursor:pointer; padding:8px 10px; background:var(--gray-light); border-radius:6px;"><input type="checkbox" /> Employer letter confirming hours reduction (Sunrise Group Home)</label>
+    </div>
+    <div style="display:flex; gap:8px;">
+      <button class="btn btn-primary" onclick="sendRequest()">Send Request to Applicant</button>
+      <button class="btn btn-outline" onclick="document.getElementById('request-info-panel').style.display='none'">Cancel</button>
+    </div>
+  </div>
+  <div id="request-sent-banner" style="display:none; background:#F0FDF4; border:1.5px solid var(--green); border-radius:8px; padding:12px 16px; margin-bottom:16px; font-size:13px; color:var(--green-dark);">
+    <strong>✅ Request sent.</strong> Maria Rodriguez will receive an SMS and email notification listing the required documents.
+  </div>
+
+
+  <div class="grid-2 mb-16">
+    <!-- Left col -->
+    <div>
+
+      <!-- Applicant Info -->
+      <div class="card mb-16">
+        <div class="card-title">👤 Applicant Information</div>
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <div class="metric-row"><span class="metric-name">Full Name</span><span class="metric-val" style="font-size:14px;">Maria Rodriguez</span></div>
+          <div class="metric-row"><span class="metric-name">Date of Birth</span><span class="metric-val" style="font-size:14px;">March 22, 1990 (Age 35)</span></div>
+          <div class="metric-row"><span class="metric-name">Marital Status</span><span class="metric-val" style="font-size:14px;">Single</span></div>
+          <div class="metric-row"><span class="metric-name">Address</span><span class="metric-val" style="font-size:13px;">412 Wythe St, Petersburg, VA 23803</span></div>
+          <div class="metric-row"><span class="metric-name">Phone</span><span class="metric-val" style="font-size:14px;">(571) ***-**47</span></div>
+          <div class="metric-row"><span class="metric-name">Email</span><span class="metric-val" style="font-size:13px;">maria.rodriguez@email.com</span></div>
+          <div class="metric-row"><span class="metric-name">Preferred Language</span><span class="metric-val" style="font-size:14px;">English / Spanish</span></div>
+        </div>
+      </div>
+
+      <!-- Household -->
+      <div class="card mb-16">
+        <div class="card-title">👨‍👩‍👧‍👦 Household Members</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="padding:10px 12px; background:var(--gray-light); border-radius:7px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-weight:700; font-size:13px;">Maria Rodriguez</div>
+              <div style="font-size:11px; color:var(--gray);">Head of Household · Age 35 · Single</div>
+            </div>
+            <span class="badge badge-navy">HoH</span>
+          </div>
+          <div style="padding:10px 12px; background:var(--gray-light); border-radius:7px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-weight:700; font-size:13px;">Matthew Rodriguez</div>
+              <div style="font-size:11px; color:var(--gray);">Child · Age 9 · Dependent</div>
+            </div>
+            <span class="badge badge-green">✓</span>
+          </div>
+          <div style="padding:10px 12px; background:var(--gray-light); border-radius:7px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <div style="font-weight:700; font-size:13px;">Miguel Rodriguez</div>
+              <div style="font-size:11px; color:var(--gray);">Child · Age 6 · Dependent</div>
+            </div>
+            <span class="badge badge-green">✓</span>
+          </div>
+        </div>
+        <div style="margin-top:10px; font-size:12px; color:var(--gray); padding:8px 10px; background:#EFF6FF; border-radius:6px;">
+          Household size of 3 · FY2025 SNAP gross income limit: $2,311/month · Maria's reported income: <strong>$980/month</strong> ✓ Eligible
+        </div>
+      </div>
+
+      <!-- Employment & Income -->
+      <div class="card">
+        <div class="card-title">💼 Employment &amp; Income</div>
+        <div style="display:flex; flex-direction:column; gap:0; margin-bottom:12px;">
+          <div class="metric-row"><span class="metric-name">Employer</span><span class="metric-val" style="font-size:14px;">Sunrise Group Home</span></div>
+          <div class="metric-row"><span class="metric-name">Employment Type</span><span class="metric-val" style="font-size:13px;">Part-time · Hours recently reduced</span></div>
+          <div class="metric-row"><span class="metric-name">Previous Hours</span><span class="metric-val" style="font-size:14px;">32 hrs/week</span></div>
+          <div class="metric-row"><span class="metric-name">Current Hours</span><span class="metric-val" style="color:var(--danger); font-size:14px;">18 hrs/week ↓</span></div>
+          <div class="metric-row"><span class="metric-name">Gross Monthly Income</span><span class="metric-val" style="font-size:14px;">$980</span></div>
+          <div class="metric-row"><span class="metric-name">Pay Frequency</span><span class="metric-val" style="font-size:14px;">Bi-weekly</span></div>
+          <div class="metric-row"><span class="metric-name">Other Income</span><span class="metric-val" style="font-size:14px;">None reported</span></div>
+        </div>
+        <div class="ai-flag" style="background:#FFF5F5; border-left-color:var(--danger);">
+          <div class="ai-flag-icon">⚡</div>
+          <div class="ai-flag-text">
+            <div class="ai-flag-title">Possible Expedited Eligibility</div>
+            <div class="ai-flag-body">Income ($980/mo) is below the expedited SNAP threshold for a household of 3. Caseworker should verify and determine if 7-day processing applies.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right col -->
+    <div>
+
+      <!-- Documents -->
+      <div class="card mb-16">
+        <div class="card-title">📎 Document Status</div>
+        <div class="doc-item">
+          <div class="doc-icon uploaded">✅</div>
+          <div class="doc-info"><div class="doc-name">Government-Issued Photo ID</div><div class="doc-status">Uploaded Feb 14 · AI pre-verified ✓</div></div>
+          <span class="badge badge-green">Verified</span>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon uploaded">✅</div>
+          <div class="doc-info"><div class="doc-name">Social Security Card</div><div class="doc-status">Uploaded Feb 14 · AI pre-verified ✓</div></div>
+          <span class="badge badge-green">Verified</span>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon uploaded">✅</div>
+          <div class="doc-info"><div class="doc-name">Pay Stubs (Jan–Feb 2025)</div><div class="doc-status">Uploaded Feb 14 · Shows hours reduction 32→18/week ✓</div></div>
+          <span class="badge badge-navy">Pending Review</span>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon pending">⚠️</div>
+          <div class="doc-info"><div class="doc-name">Proof of Residency</div><div class="doc-status">Petersburg address required · Lease or utility bill</div></div>
+          <button class="btn btn-primary btn-sm">Request</button>
+        </div>
+        <div class="doc-item">
+          <div class="doc-icon missing">❌</div>
+          <div class="doc-info"><div class="doc-name">Childcare Receipts</div><div class="doc-status">Matthew &amp; Miguel · Allowable deduction — needed for accurate benefit calc</div></div>
+          <button class="btn btn-primary btn-sm">Request</button>
+        </div>
+      </div>
+
+      <!-- AI Case Summary -->
+      <div class="card mb-16">
+        <div class="card-title">🤖 AI Case Summary</div>
+        <div style="background:var(--gray-light); border-radius:7px; padding:12px; font-size:13px; color:var(--text); line-height:1.8; border-left:3px solid var(--navy); margin-bottom:10px;">
+          <strong>Single parent HH of 3</strong> · Petersburg, VA<br>
+          Children: Matthew (9), Miguel (6)<br>
+          Employer: Sunrise Group Home · Hours cut 32→18/week<br>
+          Gross income: $980/mo · <span style="color:var(--green-dark); font-weight:600;">Below SNAP threshold ✓</span><br>
+          Docs verified: ID, SSN, pay stubs (3/5)<br>
+          Missing: Residency proof, childcare receipts<br>
+          <span style="color:var(--danger); font-weight:600;">⚡ Expedited flag: Likely — verify &amp; confirm</span>
+        </div>
+        <div style="font-size:11px; color:var(--gray);">⚠️ AI summary for reference only. Caseworker must independently verify all information before making a determination in DSS.</div>
+      </div>
+
+      <!-- Case Timeline -->
+      <div class="card mb-16">
+        <div class="card-title">📍 Case Activity Log</div>
+        <div style="display:flex; flex-direction:column; gap:0;">
+          <div style="display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--gray-mid);">
+            <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 16</div>
+            <div style="font-size:13px; color:var(--text);">Caseworker J. Thompson sent document request to applicant via secure message.</div>
+          </div>
+          <div style="display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--gray-mid);">
+            <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 15</div>
+            <div style="font-size:13px; color:var(--text);">AI completeness check: 78%. Expedited flag raised. Pay stubs received showing hours reduction.</div>
+          </div>
+          <div style="display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--gray-mid);">
+            <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 14</div>
+            <div style="font-size:13px; color:var(--text);">Application submitted online via SmartApply VA. Case assigned to J. Thompson.</div>
+          </div>
+          <div style="display:flex; gap:12px; padding:9px 0;">
+            <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 14</div>
+            <div style="font-size:13px; color:var(--text);">ID and SSN uploaded and AI pre-verified. Confirmation sent to applicant.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caseworker Notes -->
+      <div class="card">
+        <div class="card-title">📝 Caseworker Notes</div>
+        <textarea style="width:100%; padding:10px 12px; border:1.5px solid var(--gray-mid); border-radius:7px; font-size:13px; font-family:'Source Sans 3',sans-serif; resize:vertical; min-height:80px; outline:none; margin-bottom:10px;" placeholder="Add a note to this case…">Hours reduction documented by pay stubs. Possible expedited case — need residency and childcare docs before I can confirm. Will follow up with applicant by Feb 18.</textarea>
+        <button class="btn btn-primary btn-sm">Save Note</button>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -2210,9 +2364,30 @@
 
 <!-- ════════════ SCRIPTS ════════════ -->
 <script>
+// SmartApply VA — all functions attached to window to survive any script-tag injection
+
   let currentRole = null;
 
   let currentLang = 'en';
+
+  // ── CASE DETAIL ACTIONS ─────────────────────────────────
+  window.showRequestInfo = function() {
+    document.getElementById('request-info-panel').style.display = 'block';
+    document.getElementById('request-sent-banner').style.display = 'none';
+    document.getElementById('case-message-panel').style.display = 'none';
+    document.getElementById('request-info-panel').scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  window.sendRequest = function() {
+    document.getElementById('request-info-panel').style.display = 'none';
+    document.getElementById('request-sent-banner').style.display = 'block';
+    document.getElementById('request-sent-banner').scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  window.markReady = function() {
+    document.getElementById('ready-confirm').style.display = 'flex';
+    document.getElementById('btn-mark-ready').disabled = true;
+    document.getElementById('btn-mark-ready').style.opacity = '0.5';
+    document.getElementById('ready-confirm').scrollIntoView({ behavior:'smooth', block:'center' });
+  }
   const T = {
     en: {
       portal_label:'Applicant Portal — Welcome',portal_label_post:'Applicant Portal — Home Dashboard',
@@ -2239,8 +2414,8 @@
       submitting_title:'Submitting Your Application…',submitting_sub:'AI is checking your application for completeness. This takes just a moment.',
       check_household:'Validating household information…',check_income:'Checking income details…',check_ai:'Running AI completeness check…',
       confirm_title:'Application Submitted Successfully!',
-      confirm_body:'Case #VA-2025-084721 created · Assigned to caseworker J. Thompson · Confirmation sent to maria.rodriguez@email.com and (571) ***-**47',
-      submitted_label:'Submitted',btn_check_status:'📍 Check Status',btn_upload_docs:'📎 Upload Documents',btn_msg_worker:'💬 Message Caseworker',
+      confirm_body:'Case #VA-2025-084721 created · Petersburg, VA · Assigned to caseworker J. Thompson · Confirmation sent to maria.rodriguez@email.com and (571) ***-**47',
+      submitted_label:'Submitted',btn_check_status:'📍 Check Status',btn_upload_docs:'📎 Upload Documents',
       ai_readiness_title:'AI Application Readiness Check',completeness_score_label:'Application Completeness Score',
       check_personal:'✅ Personal information — Complete',check_household_done:'✅ Household members — Complete',
       check_income_done:'✅ Income verification — Complete',check_residency:'⚠️ Proof of residency — Pending upload',
@@ -2288,8 +2463,8 @@
       submitting_title:'Enviando Su Solicitud…',submitting_sub:'La IA está verificando la completitud de su solicitud. Esto toma solo un momento.',
       check_household:'Validando información del hogar…',check_income:'Verificando detalles de ingresos…',check_ai:'Ejecutando verificación de completitud de IA…',
       confirm_title:'¡Solicitud Enviada Exitosamente!',
-      confirm_body:'Caso #VA-2025-084721 creado · Asignado al trabajador J. Thompson · Confirmación enviada a maria.rodriguez@email.com y (571) ***-**47',
-      submitted_label:'Enviado',btn_check_status:'📍 Verificar Estado',btn_upload_docs:'📎 Subir Documentos',btn_msg_worker:'💬 Mensaje al Trabajador Social',
+      confirm_body:'Caso #VA-2025-084721 creado · Petersburg, VA · Asignado al trabajador J. Thompson · Confirmación enviada a maria.rodriguez@email.com y (571) ***-**47',
+      submitted_label:'Enviado',btn_check_status:'📍 Verificar Estado',btn_upload_docs:'📎 Subir Documentos',
       ai_readiness_title:'Verificación de Preparación de Solicitud IA',completeness_score_label:'Puntuación de Completitud de Solicitud',
       check_personal:'✅ Información personal — Completa',check_household_done:'✅ Miembros del hogar — Completo',
       check_income_done:'✅ Verificación de ingresos — Completa',check_residency:'⚠️ Comprobante de residencia — Pendiente de carga',
@@ -2314,7 +2489,7 @@
     }
   };
 
-  function setLang(lang) {
+  window.setLang = function setLang(lang) {
     currentLang = lang;
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.classList.remove('active');
@@ -2330,7 +2505,7 @@
 
 
   // Application submission flow
-  function submitApplication() {
+  window.submitApplication = function submitApplication() {
     // Hide pre-submit, show loading state
     document.getElementById('home-presubmit').style.display = 'none';
     document.getElementById('home-confirming').style.display = 'block';
@@ -2350,7 +2525,7 @@
   }
 
   // Reset home to pre-submit (used by signOut)
-  function resetHomeScreen() {
+  window.resetHomeScreen = function resetHomeScreen() {
     document.getElementById('home-presubmit').style.display = 'block';
     document.getElementById('home-confirming').style.display = 'none';
     document.getElementById('home-postsubmit').style.display = 'none';
@@ -2358,7 +2533,7 @@
   }
 
   // Role selection on login screen
-  function selectRole(role) {
+  window.selectRole = function selectRole(role) {
     currentRole = role;
     document.getElementById('card-applicant').className = 'portal-card' + (role === 'applicant' ? ' selected-applicant' : '');
     document.getElementById('card-caseworker').className = 'portal-card' + (role === 'caseworker' ? ' selected-caseworker' : '');
@@ -2367,7 +2542,7 @@
   }
 
   // Login — show appropriate portal
-  function loginAs(role) {
+  window.loginAs = function loginAs(role) {
     if (!role) return;
     currentRole = role;
 
@@ -2384,7 +2559,6 @@
         <button class="nav-tab" onclick="showScreen('apply')">📋 Apply</button>
         <button class="nav-tab" onclick="showScreen('documents')">📎 Documents</button>
         <button class="nav-tab" onclick="showScreen('status')">📍 Status</button>
-        <button class="nav-tab" onclick="showScreen('messages')">💬 Messages</button>
         <button class="nav-tab" onclick="showScreen('notifications')">🔔 Alerts</button>
         <button class="nav-tab" onclick="showScreen('architecture')">⚙️ Architecture</button>
       `;
@@ -2409,7 +2583,7 @@
   }
 
   // Sign out — go back to login
-  function signOut() {
+  window.signOut = function signOut() {
     currentRole = null;
     document.getElementById('login-screen').classList.remove('hidden');
     document.getElementById('main-nav').style.display = 'none';
@@ -2425,7 +2599,7 @@
   }
 
   // Show a screen and sync nav tab highlight
-  function showScreen(name) {
+  window.showScreen = function showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     const screen = document.getElementById('screen-' + name);
