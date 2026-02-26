@@ -745,7 +745,7 @@
       <div class="portal-badge applicant">PUBLIC</div>
       <div class="portal-icon">👤</div>
       <div class="portal-title">I'm an Applicant</div>
-      <div class="portal-desc">Apply for SNAP benefits, check your status, upload documents, and message your caseworker.</div>
+      <div class="portal-desc">Apply for SNAP benefits, check your status, and upload documents.</div>
     </div>
     <div class="portal-card" id="card-caseworker" onclick="selectRole('caseworker')">
       <div class="portal-badge caseworker">DSS STAFF</div>
@@ -1577,17 +1577,7 @@
             <button class="btn btn-primary btn-sm" onclick="showScreen('documents')">Upload</button>
           </div>
         </div>
-        <div class="notif-item notif-unread" style="padding:11px; background:#FFFBEB; border-radius:7px; border-bottom:none; margin-bottom:6px;">
-          <div class="notif-dot" style="background:var(--warning);"></div>
-          <div class="notif-content">
-            <div class="notif-title">⚠️ Caseworker Message</div>
-            <div class="notif-body">J. Thompson sent you a message about your application on Feb 16.</div>
-          </div>
-          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0;">
-            <div class="notif-time">Feb 16</div>
-            
-          </div>
-        </div>
+
 
         <div style="font-size:11px; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.6px; margin:10px 0 6px;">Earlier</div>
         <div class="notif-item">
@@ -1635,7 +1625,6 @@
             <div style="display:flex; flex-direction:column; gap:5px; font-size:12px;">
               <label style="display:flex; gap:6px; align-items:center; cursor:pointer;"><input type="checkbox" checked /> Status changes</label>
               <label style="display:flex; gap:6px; align-items:center; cursor:pointer;"><input type="checkbox" checked /> Document requests</label>
-              <label style="display:flex; gap:6px; align-items:center; cursor:pointer;"><input type="checkbox" checked /> Caseworker messages</label>
               <label style="display:flex; gap:6px; align-items:center; cursor:pointer;"><input type="checkbox" /> Renewal reminders</label>
             </div>
           </div>
@@ -2075,7 +2064,7 @@
           <div class="metric-row"><span class="metric-name">Marital Status</span><span class="metric-val" style="font-size:14px;">Single</span></div>
           <div class="metric-row"><span class="metric-name">Address</span><span class="metric-val" style="font-size:13px;">412 Wythe St, Petersburg, VA 23803</span></div>
           <div class="metric-row"><span class="metric-name">Phone</span><span class="metric-val" style="font-size:14px;">(571) ***-**47</span></div>
-          <div class="metric-row"><span class="metric-name">Email</span><span class="metric-val" style="font-size:13px;">maria.rodriguez@email.com</span></div>
+          <div class="metric-row"><span class="metric-name">Email</span><span class="metric-val" style="font-size:13px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="264b47544f4708544942544f4153435c66434b474f4a0845494b">[email&#160;protected]</a></span></div>
           <div class="metric-row"><span class="metric-name">Preferred Language</span><span class="metric-val" style="font-size:14px;">English / Spanish</span></div>
         </div>
       </div>
@@ -2188,7 +2177,7 @@
         <div style="display:flex; flex-direction:column; gap:0;">
           <div style="display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--gray-mid);">
             <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 16</div>
-            <div style="font-size:13px; color:var(--text);">Caseworker J. Thompson sent document request to applicant via secure message.</div>
+            <div style="font-size:13px; color:var(--text);">Caseworker J. Thompson sent document request to applicant.</div>
           </div>
           <div style="display:flex; gap:12px; padding:9px 0; border-bottom:1px solid var(--gray-mid);">
             <div style="font-size:11px; color:var(--gray); flex-shrink:0; width:60px; padding-top:1px;">Feb 15</div>
@@ -2431,7 +2420,7 @@
       benefits_expire:'Your current benefits expire:',days_remaining:'131 days remaining',
       remind_60:"We'll remind you 60 days before expiration",quick_actions_title:'Quick Actions',
       btn_continue_app:'📝 Continue Application',btn_upload_doc:'📎 Upload Document',
-      btn_contact_worker:'💬 Contact Caseworker',btn_find_kiosk2:'🏛️ Find a Kiosk Near Me',
+      btn_contact_worker:'📞 Call DSS Office',btn_find_kiosk2:'🏛️ Find a Kiosk Near Me',
       ssc_title:'🏛️ Need Help Applying? Visit a Shared Service Center',
       kiosk2_lib_title:'Public Libraries',kiosk2_lib_body:'Free-access kiosks with assisted application support at 47 locations statewide.',
       kiosk2_dss_title:'DSS Offices',kiosk2_dss_body:'Full-service support with bilingual staff at all Virginia DSS offices.',
@@ -2480,7 +2469,7 @@
       benefits_expire:'Sus beneficios actuales expiran:',days_remaining:'131 días restantes',
       remind_60:'Le recordaremos 60 días antes del vencimiento',quick_actions_title:'Acciones Rápidas',
       btn_continue_app:'📝 Continuar Solicitud',btn_upload_doc:'📎 Subir Documento',
-      btn_contact_worker:'💬 Contactar Trabajador Social',btn_find_kiosk2:'🏛️ Encontrar un Quiosco Cerca de Mí',
+      btn_contact_worker:'📞 Llamar a la Oficina DSS',btn_find_kiosk2:'🏛️ Encontrar un Quiosco Cerca de Mí',
       ssc_title:'🏛️ ¿Necesita Ayuda para Solicitar? Visite un Centro de Servicio Compartido',
       kiosk2_lib_title:'Bibliotecas Públicas',kiosk2_lib_body:'Quioscos de acceso gratuito con asistencia de personal en 47 ubicaciones en todo el estado.',
       kiosk2_dss_title:'Oficinas DSS',kiosk2_dss_body:'Servicio completo con personal bilingüe en todas las oficinas DSS de Virginia.',
